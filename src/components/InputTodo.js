@@ -25,8 +25,6 @@ class InputTodo extends Component {
     return (
         <form onSubmit={this.handleSubmit}>
         <input type="text" placeholder="Add Todo..." name= "Title" value={this.state.Title} onChange={this.onChange}/>
-        <input type="text" placeholder="Add Name..." name= "Name" value={this.state.Name} onChange={this.onChange}/>
-        <input type="text" placeholder="Add age..." name= "Age"  value={this.state.Age} onChange={this.onChange}/>
         <button>Submit</button>
       </form>
     )
