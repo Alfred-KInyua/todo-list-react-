@@ -10,12 +10,16 @@ class InputTodo extends Component {
         }
     }
     handleSubmit = e => {
-        e.preventDefault();
-        this.props.addTodoProps(this.state.Title);
-        this.setState({
-            Title:''
-        });
-      };
+        e.preventDefault()
+        if (this.state.Title.trim()) {
+          this.props.addTodoProps(this.state.Title)
+          this.setState({
+            Title: "",
+          })
+        } else {
+          alert("Please write item")
+        }
+      }
     onChange=(e)=>{
       this.setState({
        [e.target.name]:e.target.value
