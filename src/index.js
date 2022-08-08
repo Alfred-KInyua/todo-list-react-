@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css"
 import  ReactDOM from "react-dom";
 import TodoContainer from "./components/TodoContainer";
 // ReactDOM.render(element, document.getElementById('root'));

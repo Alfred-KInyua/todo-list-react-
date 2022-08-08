@@ -1,24 +1,29 @@
-import React from "react"
-import TodoList from "./TodosList"
-class TodoItem extends React.Component{
-    constructor(props){
-        super(props)
-        this.state={
-            Title:"",
-        }
-    }
-render(){
-    return(
-        <>
-        <button onClick={()=>this.props.delTodoProps(this.props.todo.id)}>Delete</button>
-        <li><input type="checkbox" checked={this.props.todo.completed}
-             onChange={() => this.props.handleChangeProps(this.props.todo.id)} />{this.props.todo.title}
-        </li>   
-        </>    
-    )
-}
+import React from "react";
+import styles from "./TodoItem.module.css";
+import TodoList from "./TodosList";
+class TodoItem extends React.Component {
+  render() {
+    const completedStyle = {
+      fontStyle: "italic",
+      color: "#595959",
+      opacity: 0.4,
+      textDecoration: "line-through",
+    };
+    const { completed, id, title } = this.props.todo
 
-
+    return (
+        <li className={styles.item}>
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            checked={completed}
+            onChange={() => this.props.handleChangeProps(id)}
+          />
+          <button onClick={() => this.props.delTodoProps(id)}>Delete</button>
+          <span style={completed ? completedStyle : null}>{title}</span>
+        </li>
+      )
+  }
 }
 
 export default TodoItem;
