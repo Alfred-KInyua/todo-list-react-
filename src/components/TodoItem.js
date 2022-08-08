@@ -1,6 +1,12 @@
 import React from "react"
 import TodoList from "./TodosList"
 class TodoItem extends React.Component{
+    constructor(props){
+        super(props)
+        this.state={
+            Title:"",
+        }
+    }
 render(){
     return(
         <>
